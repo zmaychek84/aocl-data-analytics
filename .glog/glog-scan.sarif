@@ -1,0 +1,2972 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Glog.AI",
+          "organization": "Glog.AI",
+          "fullName": "Glog, Making software more secure",
+          "version": "1.0.0",
+          "semanticVersion": "1.0.0",
+          "informationUri": "https://www.glog.ai",
+          "rules": [
+            {
+              "id": "glog-4419a482-dea0-4e6b-9395-3e8e521bb6dc",
+              "help": {
+                "text": ""
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-interesting-api-calls"
+                ]
+              }
+            },
+            {
+              "id": "glog-cfbfbf90-d7a1-4707-8508-8c45afc63133",
+              "help": {
+                "text": ""
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-interesting-api-calls"
+                ]
+              }
+            },
+            {
+              "id": "glog-916b2029-e80c-4fd6-8b47-b0f6e3cfaccf",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (memcpy)\" vulnerability in C++ arises when the `memcpy` function is used improperly, potentially leading to buffer overflows, data corruption, or undefined behavior. This typically occurs when the size of the data being copied exceeds the size of the destination buffer. In the provided code snippet, the vulnerability is due to the use of `sizeof(T)` which may not accurately represent the size of the data being copied if `T` is not the correct type or if the size of the data is dynamic.\n\n### General Mitigation Advice\n\n1. **Validate Buffer Sizes**: Ensure that the destination buffer is large enough to hold the data being copied.\n2. **Use Safer Alternatives**: Consider using safer functions like `std::copy` or `std::memmove` which provide better safety guarantees.\n3. **Static Analysis Tools**: Use static analysis tools to detect potential buffer overflows.\n4. **Code Reviews**: Regularly conduct code reviews to catch potential vulnerabilities early.\n\n### Source Code Fix Recommendation\n\nTo fix the specific vulnerability, ensure that the size of the data being copied is correctly calculated and that the destination buffer is large enough. Here is a revised version of the code:\n\n```cpp\n#include <algorithm> // for std::copy\n#include <cstring>   // for std::memcpy\n\n// Assuming T is a type and X is an object with a method mutable_data() returning a pointer\nvoid safeCopy(T* destination, const T* source, size_t count) {\n    std::copy(source, source + count, destination);\n}\n\n// Usage\nsafeCopy(copy_X.mutable_data(), X.mutable_data(), count); // Ensure 'count' is the correct size\n```\n\n### Library Dependencies\n\nTo execute the code example properly, the following libraries are required:\n\n- `<algorithm>`: For `std::copy`.\n- `<cstring>`: For `std::memcpy` (if still needed elsewhere in the code).\n\n### Relevant Resources\n\n- [OWASP Buffer Overflow](https://owasp.org/www-community/vulnerabilities/Buffer_Overflow)\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS121708"
+                ]
+              }
+            },
+            {
+              "id": "glog-2d758242-b2a3-4aa8-b8b1-9568b5d4bc10",
+              "help": {
+                "text": ""
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-interesting-api-calls"
+                ]
+              }
+            },
+            {
+              "id": "glog-02398af2-a05b-48de-97ec-7200e451d730",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (memcpy)\" vulnerability in C++ arises when the `memcpy` function is used improperly, potentially leading to buffer overflows, data corruption, or undefined behavior. This typically occurs when the size of the data being copied exceeds the size of the destination buffer. In the provided code snippet, the vulnerability is due to the use of `sizeof(T)` which may not accurately represent the size of the data being copied if `T` is not the correct type or if the size of the data is dynamic.\n\n### General Mitigation Advice\n\n1. **Validate Buffer Sizes**: Ensure that the destination buffer is large enough to hold the data being copied.\n2. **Use Safer Alternatives**: Consider using safer functions like `std::copy` or `std::memmove` which provide better safety guarantees.\n3. **Static Analysis Tools**: Use static analysis tools to detect potential buffer overflows.\n4. **Code Reviews**: Regularly conduct code reviews to catch potential vulnerabilities early.\n\n### Source Code Fix Recommendation\n\nTo fix the specific vulnerability, ensure that the size of the data being copied is correctly calculated and that the destination buffer is large enough. Here is a revised version of the code:\n\n```cpp\n#include <algorithm> // for std::copy\n#include <cstring>   // for std::memcpy\n\n// Assuming T is a type and X is an object with a method mutable_data() returning a pointer\nvoid safeCopy(T* destination, const T* source, size_t count) {\n    std::copy(source, source + count, destination);\n}\n\n// Usage\nsafeCopy(copy_X.mutable_data(), X.mutable_data(), count); // Ensure 'count' is the correct size\n```\n\n### Library Dependencies\n\nTo execute the code example properly, the following libraries are required:\n\n- `<algorithm>`: For `std::copy`.\n- `<cstring>`: For `std::memcpy` (if still needed elsewhere in the code).\n\n### Relevant Resources\n\n- [OWASP Buffer Overflow](https://owasp.org/www-community/vulnerabilities/Buffer_Overflow)\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS121708"
+                ]
+              }
+            },
+            {
+              "id": "glog-267b6b74-bdd0-4f0b-a5d2-63cf3a90177a",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (memcpy)\" vulnerability in C++ arises when the `memcpy` function is used improperly, potentially leading to buffer overflows, data corruption, or undefined behavior. This typically occurs when the size of the data being copied exceeds the size of the destination buffer. In the provided code snippet, the vulnerability is due to the use of `sizeof(T)` which may not accurately represent the size of the data being copied if `T` is not the correct type or if the size of the data is dynamic.\n\n### General Mitigation Advice\n\n1. **Validate Buffer Sizes**: Ensure that the destination buffer is large enough to hold the data being copied.\n2. **Use Safer Alternatives**: Consider using safer functions like `std::copy` or `std::memmove` which provide better safety guarantees.\n3. **Static Analysis Tools**: Use static analysis tools to detect potential buffer overflows.\n4. **Code Reviews**: Regularly conduct code reviews to catch potential vulnerabilities early.\n\n### Source Code Fix Recommendation\n\nTo fix the specific vulnerability, ensure that the size of the data being copied is correctly calculated and that the destination buffer is large enough. Here is a revised version of the code:\n\n```cpp\n#include <algorithm> // for std::copy\n#include <cstring>   // for std::memcpy\n\n// Assuming T is a type and X is an object with a method mutable_data() returning a pointer\nvoid safeCopy(T* destination, const T* source, size_t count) {\n    std::copy(source, source + count, destination);\n}\n\n// Usage\nsafeCopy(copy_X.mutable_data(), X.mutable_data(), count); // Ensure 'count' is the correct size\n```\n\n### Library Dependencies\n\nTo execute the code example properly, the following libraries are required:\n\n- `<algorithm>`: For `std::copy`.\n- `<cstring>`: For `std::memcpy` (if still needed elsewhere in the code).\n\n### Relevant Resources\n\n- [OWASP Buffer Overflow](https://owasp.org/www-community/vulnerabilities/Buffer_Overflow)\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS121708"
+                ]
+              }
+            },
+            {
+              "id": "glog-147221d9-f93a-486d-aa71-f7b40858fbf4",
+              "help": {
+                "text": ""
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-interesting-api-calls"
+                ]
+              }
+            },
+            {
+              "id": "glog-02cefe4d-91f0-4e78-a3c9-ab3fb7cedb9d",
+              "help": {
+                "text": ""
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-interesting-api-calls"
+                ]
+              }
+            },
+            {
+              "id": "glog-bb00a109-38e2-49f8-b6d6-9bd5fa579e58",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (memcpy)\" vulnerability in C++ arises when the `memcpy` function is used improperly, potentially leading to buffer overflows, data corruption, or undefined behavior. This typically occurs when the size of the data being copied exceeds the size of the destination buffer. In the provided code snippet, the vulnerability is due to the use of `sizeof(T)` which may not accurately represent the size of the data being copied if `T` is not the correct type or if the size of the data is dynamic.\n\n### General Mitigation Advice\n\n1. **Validate Buffer Sizes**: Ensure that the destination buffer is large enough to hold the data being copied.\n2. **Use Safer Alternatives**: Consider using safer functions like `std::copy` or `std::memmove` which provide better safety guarantees.\n3. **Static Analysis Tools**: Use static analysis tools to detect potential buffer overflows.\n4. **Code Reviews**: Regularly conduct code reviews to catch potential vulnerabilities early.\n\n### Source Code Fix Recommendation\n\nTo fix the specific vulnerability, ensure that the size of the data being copied is correctly calculated and that the destination buffer is large enough. Here is a revised version of the code:\n\n```cpp\n#include <algorithm> // for std::copy\n#include <cstring>   // for std::memcpy\n\n// Assuming T is a type and X is an object with a method mutable_data() returning a pointer\nvoid safeCopy(T* destination, const T* source, size_t count) {\n    std::copy(source, source + count, destination);\n}\n\n// Usage\nsafeCopy(copy_X.mutable_data(), X.mutable_data(), count); // Ensure 'count' is the correct size\n```\n\n### Library Dependencies\n\nTo execute the code example properly, the following libraries are required:\n\n- `<algorithm>`: For `std::copy`.\n- `<cstring>`: For `std::memcpy` (if still needed elsewhere in the code).\n\n### Relevant Resources\n\n- [OWASP Buffer Overflow](https://owasp.org/www-community/vulnerabilities/Buffer_Overflow)\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS121708"
+                ]
+              }
+            },
+            {
+              "id": "glog-54f559df-b13a-4ebe-a110-c7abdb9d8f0b",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (memcpy)\" vulnerability in C++ arises when the `memcpy` function is used improperly, potentially leading to buffer overflows, data corruption, or undefined behavior. This typically occurs when the size of the data being copied exceeds the size of the destination buffer. In the provided code snippet, the vulnerability is due to the use of `sizeof(T)` which may not accurately represent the size of the data being copied if `T` is not the correct type or if the size of the data is dynamic.\n\n### General Mitigation Advice\n\n1. **Validate Buffer Sizes**: Ensure that the destination buffer is large enough to hold the data being copied.\n2. **Use Safer Alternatives**: Consider using safer functions like `std::copy` or `std::memmove` which provide better safety guarantees.\n3. **Static Analysis Tools**: Use static analysis tools to detect potential buffer overflows.\n4. **Code Reviews**: Regularly conduct code reviews to catch potential vulnerabilities early.\n\n### Source Code Fix Recommendation\n\nTo fix the specific vulnerability, ensure that the size of the data being copied is correctly calculated and that the destination buffer is large enough. Here is a revised version of the code:\n\n```cpp\n#include <algorithm> // for std::copy\n#include <cstring>   // for std::memcpy\n\n// Assuming T is a type and X is an object with a method mutable_data() returning a pointer\nvoid safeCopy(T* destination, const T* source, size_t count) {\n    std::copy(source, source + count, destination);\n}\n\n// Usage\nsafeCopy(copy_X.mutable_data(), X.mutable_data(), count); // Ensure 'count' is the correct size\n```\n\n### Library Dependencies\n\nTo execute the code example properly, the following libraries are required:\n\n- `<algorithm>`: For `std::copy`.\n- `<cstring>`: For `std::memcpy` (if still needed elsewhere in the code).\n\n### Relevant Resources\n\n- [OWASP Buffer Overflow](https://owasp.org/www-community/vulnerabilities/Buffer_Overflow)\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS121708"
+                ]
+              }
+            },
+            {
+              "id": "glog-9269da09-fc7f-48c2-b100-4473a09854af",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (memcpy)\" vulnerability in C++ arises when the `memcpy` function is used improperly, potentially leading to buffer overflows, data corruption, or undefined behavior. This typically occurs when the size of the data being copied exceeds the size of the destination buffer. In the provided code snippet, the vulnerability is due to the use of `sizeof(T)` which may not accurately represent the size of the data being copied if `T` is not the correct type or if the size of the data is dynamic.\n\n### General Mitigation Advice\n\n1. **Validate Buffer Sizes**: Ensure that the destination buffer is large enough to hold the data being copied.\n2. **Use Safer Alternatives**: Consider using safer functions like `std::copy` or `std::memmove` which provide better safety guarantees.\n3. **Static Analysis Tools**: Use static analysis tools to detect potential buffer overflows.\n4. **Code Reviews**: Regularly conduct code reviews to catch potential vulnerabilities early.\n\n### Source Code Fix Recommendation\n\nTo fix the specific vulnerability, ensure that the size of the data being copied is correctly calculated and that the destination buffer is large enough. Here is a revised version of the code:\n\n```cpp\n#include <algorithm> // for std::copy\n#include <cstring>   // for std::memcpy\n\n// Assuming T is a type and X is an object with a method mutable_data() returning a pointer\nvoid safeCopy(T* destination, const T* source, size_t count) {\n    std::copy(source, source + count, destination);\n}\n\n// Usage\nsafeCopy(copy_X.mutable_data(), X.mutable_data(), count); // Ensure 'count' is the correct size\n```\n\n### Library Dependencies\n\nTo execute the code example properly, the following libraries are required:\n\n- `<algorithm>`: For `std::copy`.\n- `<cstring>`: For `std::memcpy` (if still needed elsewhere in the code).\n\n### Relevant Resources\n\n- [OWASP Buffer Overflow](https://owasp.org/www-community/vulnerabilities/Buffer_Overflow)\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS121708"
+                ]
+              }
+            },
+            {
+              "id": "glog-8309e604-848c-467b-8e01-1f88b2294190",
+              "help": {
+                "text": ""
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-interesting-api-calls"
+                ]
+              }
+            },
+            {
+              "id": "glog-95c581d3-d6e0-40b8-9145-b31af4458677",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (memcpy)\" vulnerability in C++ arises when the `memcpy` function is used improperly, potentially leading to buffer overflows, data corruption, or undefined behavior. This typically occurs when the size of the data being copied exceeds the size of the destination buffer. In the provided code snippet, the vulnerability is due to the use of `sizeof(T)` which may not accurately represent the size of the data being copied if `T` is not the correct type or if the size of the data is dynamic.\n\n### General Mitigation Advice\n\n1. **Validate Buffer Sizes**: Ensure that the destination buffer is large enough to hold the data being copied.\n2. **Use Safer Alternatives**: Consider using safer functions like `std::copy` or `std::memmove` which provide better safety guarantees.\n3. **Static Analysis Tools**: Use static analysis tools to detect potential buffer overflows.\n4. **Code Reviews**: Regularly conduct code reviews to catch potential vulnerabilities early.\n\n### Source Code Fix Recommendation\n\nTo fix the specific vulnerability, ensure that the size of the data being copied is correctly calculated and that the destination buffer is large enough. Here is a revised version of the code:\n\n```cpp\n#include <algorithm> // for std::copy\n#include <cstring>   // for std::memcpy\n\n// Assuming T is a type and X is an object with a method mutable_data() returning a pointer\nvoid safeCopy(T* destination, const T* source, size_t count) {\n    std::copy(source, source + count, destination);\n}\n\n// Usage\nsafeCopy(copy_X.mutable_data(), X.mutable_data(), count); // Ensure 'count' is the correct size\n```\n\n### Library Dependencies\n\nTo execute the code example properly, the following libraries are required:\n\n- `<algorithm>`: For `std::copy`.\n- `<cstring>`: For `std::memcpy` (if still needed elsewhere in the code).\n\n### Relevant Resources\n\n- [OWASP Buffer Overflow](https://owasp.org/www-community/vulnerabilities/Buffer_Overflow)\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS121708"
+                ]
+              }
+            },
+            {
+              "id": "glog-aeb2a3a9-947d-4d24-a32e-8e63f97c62bb",
+              "help": {
+                "text": ""
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-interesting-api-calls"
+                ]
+              }
+            },
+            {
+              "id": "glog-5af60c57-5868-4d9c-92be-db7ef8978df1",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ arises when the `malloc` function is used improperly, leading to potential memory allocation issues such as buffer overflows, memory leaks, or improper handling of null pointers. This vulnerability can be exploited to cause a program to crash or behave unpredictably, and in some cases, it can be leveraged to execute arbitrary code.\n\n### General Mitigation Advice\n\n1. **Check for Null Pointers**: Always check the return value of `malloc` to ensure that memory allocation was successful.\n2. **Use Safer Alternatives**: Consider using C++ memory management features like `new` and `delete`, or smart pointers such as `std::unique_ptr` and `std::shared_ptr`.\n3. **Properly Free Memory**: Ensure that all allocated memory is properly freed using `free` to prevent memory leaks.\n4. **Boundary Checks**: Implement boundary checks to prevent buffer overflows.\n5. **Initialize Memory**: Use functions like `calloc` or `memset` to initialize allocated memory.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to properly handle memory allocation using `malloc`:\n\n```cpp\n#include <iostream>\n#include <cstdlib> // Required for malloc and free\n\nint main() {\n    size_t bufsize = 1024;\n    char* buffer = (char*)malloc(bufsize);\n\n    if (buffer == nullptr) {\n        std::cerr << \"Memory allocation failed\" << std::endl;\n        return 1;\n    }\n\n    // Use the buffer for some operations\n    // ...\n\n    // Free the allocated memory\n    free(buffer);\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following library dependencies are required:\n\n- `<iostream>`: For input and output operations.\n- `<cstdlib>`: For `malloc` and `free` functions.\n\n### Relevant Links\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer](https://cwe.mitre.org/data/definitions/119.html)\n- [CWE-401: Missing Release of Memory after Effective Lifetime](https://cwe.mitre.org/data/definitions/401.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-d6e1f280-7bd3-45d8-85f1-4f4fb6a357ed",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIncompatible Memory Release Function Usage Vulnerability refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. In Python, this vulnerability is not common because Python uses a garbage collector that automatically manages memory. However, in languages like C++ where developers have to manually manage memory, this vulnerability can occur.\n\nIn the provided code snippet `delete[] xindex;`, the developer is trying to deallocate memory that was presumably allocated using `new[]`. If `xindex` was not allocated using `new[]`, this could lead to undefined behavior and potential security vulnerabilities.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, developers should ensure that they are using the correct function to deallocate memory. If memory was allocated using `new[]`, it should be deallocated using `delete[]`. If it was allocated using `new`, it should be deallocated using `delete`.\n\n## Source Code Fix Recommendation\n\nWithout the full context of the code, it's hard to provide a specific fix. However, the general rule is to match the allocation and deallocation methods. If `xindex` was allocated using `new[]`, the provided code is correct. If it was allocated using `new`, the code should be `delete xindex;`.\n\n## Library Dependencies\n\nThis code snippet is in C++, not Python, and does not appear to require any specific library dependencies.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Memory not on the Heap](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not be accessible at all times."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-6da37fcd-9e95-4c20-afd5-d4bea79f4754",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIncompatible Memory Release Function Usage Vulnerability refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. In Python, this vulnerability is not common because Python uses a garbage collector that automatically manages memory. However, in languages like C++ where developers have to manually manage memory, this vulnerability can occur.\n\nIn the provided code snippet `delete[] xindex;`, the developer is trying to deallocate memory that was presumably allocated using `new[]`. If `xindex` was not allocated using `new[]`, this could lead to undefined behavior and potential security vulnerabilities.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, developers should ensure that they are using the correct function to deallocate memory. If memory was allocated using `new[]`, it should be deallocated using `delete[]`. If it was allocated using `new`, it should be deallocated using `delete`.\n\n## Source Code Fix Recommendation\n\nWithout the full context of the code, it's hard to provide a specific fix. However, the general rule is to match the allocation and deallocation methods. If `xindex` was allocated using `new[]`, the provided code is correct. If it was allocated using `new`, the code should be `delete xindex;`.\n\n## Library Dependencies\n\nThis code snippet is in C++, not Python, and does not appear to require any specific library dependencies.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Memory not on the Heap](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not be accessible at all times."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-b32d999f-d7d2-4876-b532-e8a551a4358d",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIncompatible Memory Release Function Usage Vulnerability refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. In Python, this vulnerability is not common because Python uses a garbage collector that automatically manages memory. However, in languages like C++ where developers have to manually manage memory, this vulnerability can occur.\n\nIn the provided code snippet `delete[] xindex;`, the developer is trying to deallocate memory that was presumably allocated using `new[]`. If `xindex` was not allocated using `new[]`, this could lead to undefined behavior and potential security vulnerabilities.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, developers should ensure that they are using the correct function to deallocate memory. If memory was allocated using `new[]`, it should be deallocated using `delete[]`. If it was allocated using `new`, it should be deallocated using `delete`.\n\n## Source Code Fix Recommendation\n\nWithout the full context of the code, it's hard to provide a specific fix. However, the general rule is to match the allocation and deallocation methods. If `xindex` was allocated using `new[]`, the provided code is correct. If it was allocated using `new`, the code should be `delete xindex;`.\n\n## Library Dependencies\n\nThis code snippet is in C++, not Python, and does not appear to require any specific library dependencies.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Memory not on the Heap](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not be accessible at all times."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-fb7b0b94-27e3-4272-ac62-2ea27ef8fef2",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIncompatible Memory Release Function Vulnerability in Python refers to a situation where a programmer uses a function to release or deallocate a memory block that was not allocated by the corresponding allocator. This can lead to unexpected behavior or crashes. In Python, this is less common than in languages like C or C++, because Python's memory management is largely automatic. However, it can still occur in Python when using certain C libraries, or when using the `ctypes` module to interface with C code.\n\nIn the provided code snippet, `free(message);` is trying to deallocate memory that may not have been allocated by `malloc()` or a similar function. This can lead to undefined behavior.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, ensure that memory is always deallocated by the function that allocated it. In Python, this is usually handled automatically, but when interfacing with C code, be sure to use the correct functions. If a block of memory was allocated with `malloc()`, it should be deallocated with `free()`. If it was allocated with `new`, it should be deallocated with `delete`, and so on.\n\n## Source Code Fix Recommendation\n\nWithout the full context of the code, it's hard to provide a specific fix. However, the general recommendation would be to ensure that the `free()` function is only used to deallocate memory that was allocated by `malloc()` or a similar function. If the `message` variable was not allocated in this way, you should find the correct way to deallocate it.\n\n## Library Dependencies\n\nThe provided code snippet is a C code, not Python. It requires the `stdlib.h` library for the `free()` function.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Memory not on the Heap](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not always be accessible."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-1009ff69-5e45-47c3-b4a6-ff6ba1a0d190",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ arises when the `malloc` function is used improperly, leading to potential memory allocation issues such as buffer overflows, memory leaks, or improper handling of null pointers. This vulnerability can be exploited to cause a program to crash or behave unpredictably, and in some cases, it can be leveraged to execute arbitrary code.\n\n### General Mitigation Advice\n\n1. **Check for Null Pointers**: Always check the return value of `malloc` to ensure that memory allocation was successful.\n2. **Use Safer Alternatives**: Consider using C++ memory management features like `new` and `delete`, or smart pointers such as `std::unique_ptr` and `std::shared_ptr`.\n3. **Properly Free Memory**: Ensure that all allocated memory is properly freed using `free` to prevent memory leaks.\n4. **Boundary Checks**: Implement boundary checks to prevent buffer overflows.\n5. **Initialize Memory**: Use functions like `calloc` or `memset` to initialize allocated memory.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to properly handle memory allocation using `malloc`:\n\n```cpp\n#include <iostream>\n#include <cstdlib> // Required for malloc and free\n\nint main() {\n    size_t bufsize = 1024;\n    char* buffer = (char*)malloc(bufsize);\n\n    if (buffer == nullptr) {\n        std::cerr << \"Memory allocation failed\" << std::endl;\n        return 1;\n    }\n\n    // Use the buffer for some operations\n    // ...\n\n    // Free the allocated memory\n    free(buffer);\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following library dependencies are required:\n\n- `<iostream>`: For input and output operations.\n- `<cstdlib>`: For `malloc` and `free` functions.\n\n### Relevant Links\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer](https://cwe.mitre.org/data/definitions/119.html)\n- [CWE-401: Missing Release of Memory after Effective Lifetime](https://cwe.mitre.org/data/definitions/401.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-1269548a-19ca-4ddb-a2b5-20a32030ebeb",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIncompatible Memory Release Function Usage Vulnerability refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. In Python, this vulnerability is not common because Python uses a garbage collector that automatically manages memory. However, in languages like C++ where developers have to manually manage memory, this vulnerability can occur.\n\nIn the provided code snippet `delete[] amean;`, the developer is trying to deallocate memory that was allocated using `new[]`. If the memory was not allocated using `new[]`, this could lead to undefined behavior and potential security vulnerabilities.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, developers should ensure that they are using the correct function to deallocate memory. If memory was allocated using `new[]`, it should be deallocated using `delete[]`. If it was allocated using `new`, it should be deallocated using `delete`.\n\n## Source Code Fix Recommendation\n\nWithout the full context of the code, it's hard to provide a specific fix. However, the general recommendation would be to ensure that the correct deallocation function is used. If `amean` was allocated using `new[]`, then `delete[] amean;` is correct. If it was allocated using `new`, then the code should be `delete amean;`.\n\n## Library Dependencies\n\nThis code snippet appears to be in C++, not Python. Therefore, it doesn't have any Python library dependencies. In C++, `new` and `delete` are built-in keywords and don't require any library to function.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Pointer not at Start of Buffer](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not be available in the future."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-6e4a12fd-de74-4d8a-8832-984d563cd86a",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIncompatible Memory Release Function Usage Vulnerability in Python refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. This can lead to unexpected behavior, including memory leaks, corruption, and crashes. In the provided code snippet, `delete[]` is used, which is a C++ operator and not valid in Python. Python uses a garbage collector to manage memory, so explicit deallocation is not typically necessary.\n\n## Mitigation Advice\n\nIn Python, you don't need to manually manage memory. Python's garbage collector automatically frees up the memory for objects that are no longer in use. If you want to explicitly release an object, you can use the `del` statement. However, this is usually unnecessary and can lead to problems if not used carefully.\n\n## Source Code Fix Recommendation\n\nSince Python handles memory management automatically, you don't need to use `delete[]` as in C++. If you want to delete a variable or object, you can use the `del` statement. Here's an example:\n\n```python\nx_copy = [1, 2, 3, 4, 5]\n# some operations on x_copy\ndel x_copy\n```\n\nIn this case, `x_copy` will be removed and its memory will be freed.\n\n## Library Dependencies\n\nPython does not require any specific library to execute the `del` statement.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Memory not on the Heap](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not be available in the future."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-82f03f90-7b66-4051-a4d3-d5bd196ed8cc",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe vulnerability identified with the C function `strlen` in C++ arises from the potential for accessing memory out of bounds. This can occur when the index used to access an array is not properly validated, leading to undefined behavior, crashes, or security vulnerabilities such as buffer overflows. In the specific case of `strlen(self->words[word_deletions - 1])`, if `word_deletions` is zero or greater than the number of elements in `self->words`, it will result in accessing invalid memory.\n\n### General Mitigation Advice\n\n1. **Input Validation**: Always validate indices before using them to access array elements. Ensure that the index is within the valid range of the array.\n2. **Boundary Checks**: Implement boundary checks to prevent accessing memory outside the allocated range.\n3. **Use Safer Alternatives**: Consider using safer string handling functions or libraries that automatically handle boundary checks.\n\n### Source Code Fix Recommendation\n\nTo mitigate the vulnerability, ensure that the index is within the valid range before calling `strlen`. Here is a code fix recommendation:\n\n```cpp\n#include <iostream>\n#include <cstring> // Required for strlen\n\n// Assuming self->words is a valid pointer to an array of C-style strings\nvoid safe_strlen_access(char** words, size_t word_count, size_t word_deletions) {\n    if (word_deletions > 0 && word_deletions <= word_count) {\n        size_t length = strlen(words[word_deletions - 1]);\n        std::cout << \"Length of the word: \" << length << std::endl;\n    } else {\n        std::cerr << \"Invalid index for word deletions.\" << std::endl;\n    }\n}\n\nint main() {\n    // Example usage\n    char* words[] = {\"hello\", \"world\", \"example\"};\n    size_t word_count = sizeof(words) / sizeof(words[0]);\n    size_t word_deletions = 2; // Example index\n\n    safe_strlen_access(words, word_count, word_deletions);\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\n- `<iostream>`: For input and output operations.\n- `<cstring>`: For using the `strlen` function.\n\n### OWASP Resources\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [OWASP Secure Coding Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-125: Out-of-bounds Read](https://cwe.mitre.org/data/definitions/125.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS140021"
+                ]
+              }
+            },
+            {
+              "id": "glog-e19d5fdb-f19c-4eb2-a7db-71e10c04af4e",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ arises when the `malloc` function is used improperly, leading to potential memory allocation issues such as buffer overflows, memory leaks, or improper handling of null pointers. This vulnerability can be exploited to cause a program to crash or behave unpredictably, and in some cases, it can be leveraged to execute arbitrary code.\n\n### General Mitigation Advice\n\n1. **Check for Null Pointers**: Always check the return value of `malloc` to ensure that memory allocation was successful.\n2. **Use Safer Alternatives**: Consider using C++ memory management features like `new` and `delete`, or smart pointers such as `std::unique_ptr` and `std::shared_ptr`.\n3. **Properly Free Memory**: Ensure that all allocated memory is properly freed using `free` to prevent memory leaks.\n4. **Boundary Checks**: Implement boundary checks to prevent buffer overflows.\n5. **Initialize Memory**: Use functions like `calloc` or `memset` to initialize allocated memory.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to properly handle memory allocation using `malloc`:\n\n```cpp\n#include <iostream>\n#include <cstdlib> // Required for malloc and free\n\nint main() {\n    size_t bufsize = 1024;\n    char* buffer = (char*)malloc(bufsize);\n\n    if (buffer == nullptr) {\n        std::cerr << \"Memory allocation failed\" << std::endl;\n        return 1;\n    }\n\n    // Use the buffer for some operations\n    // ...\n\n    // Free the allocated memory\n    free(buffer);\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following library dependencies are required:\n\n- `<iostream>`: For input and output operations.\n- `<cstdlib>`: For `malloc` and `free` functions.\n\n### Relevant Links\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer](https://cwe.mitre.org/data/definitions/119.html)\n- [CWE-401: Missing Release of Memory after Effective Lifetime](https://cwe.mitre.org/data/definitions/401.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-45d6281d-5c76-4ad5-ab8f-dc658d8239ae",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ arises when the `malloc` function is used improperly, leading to potential memory allocation issues such as buffer overflows, memory leaks, or improper handling of null pointers. This vulnerability can be exploited to cause a program to crash or behave unpredictably, and in some cases, it can be leveraged to execute arbitrary code.\n\n### General Mitigation Advice\n\n1. **Check for Null Pointers**: Always check the return value of `malloc` to ensure that memory allocation was successful.\n2. **Use Safer Alternatives**: Consider using C++ memory management features like `new` and `delete`, or smart pointers such as `std::unique_ptr` and `std::shared_ptr`.\n3. **Properly Free Memory**: Ensure that all allocated memory is properly freed using `free` to prevent memory leaks.\n4. **Boundary Checks**: Implement boundary checks to prevent buffer overflows.\n5. **Initialize Memory**: Use functions like `calloc` or `memset` to initialize allocated memory.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to properly handle memory allocation using `malloc`:\n\n```cpp\n#include <iostream>\n#include <cstdlib> // Required for malloc and free\n\nint main() {\n    size_t bufsize = 1024;\n    char* buffer = (char*)malloc(bufsize);\n\n    if (buffer == nullptr) {\n        std::cerr << \"Memory allocation failed\" << std::endl;\n        return 1;\n    }\n\n    // Use the buffer for some operations\n    // ...\n\n    // Free the allocated memory\n    free(buffer);\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following library dependencies are required:\n\n- `<iostream>`: For input and output operations.\n- `<cstdlib>`: For `malloc` and `free` functions.\n\n### Relevant Links\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer](https://cwe.mitre.org/data/definitions/119.html)\n- [CWE-401: Missing Release of Memory after Effective Lifetime](https://cwe.mitre.org/data/definitions/401.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-78af6155-f22c-4da3-93c8-83ac7520ea42",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ arises when the `malloc` function is used improperly, leading to potential memory allocation issues such as buffer overflows, memory leaks, or improper handling of null pointers. This vulnerability can be exploited to cause a program to crash or behave unpredictably, and in some cases, it can be leveraged to execute arbitrary code.\n\n### General Mitigation Advice\n\n1. **Check for Null Pointers**: Always check the return value of `malloc` to ensure that memory allocation was successful.\n2. **Use Safer Alternatives**: Consider using C++ memory management features like `new` and `delete`, or smart pointers such as `std::unique_ptr` and `std::shared_ptr`.\n3. **Properly Free Memory**: Ensure that all allocated memory is properly freed using `free` to prevent memory leaks.\n4. **Boundary Checks**: Implement boundary checks to prevent buffer overflows.\n5. **Initialize Memory**: Use functions like `calloc` or `memset` to initialize allocated memory.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to properly handle memory allocation using `malloc`:\n\n```cpp\n#include <iostream>\n#include <cstdlib> // Required for malloc and free\n\nint main() {\n    size_t bufsize = 1024;\n    char* buffer = (char*)malloc(bufsize);\n\n    if (buffer == nullptr) {\n        std::cerr << \"Memory allocation failed\" << std::endl;\n        return 1;\n    }\n\n    // Use the buffer for some operations\n    // ...\n\n    // Free the allocated memory\n    free(buffer);\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following library dependencies are required:\n\n- `<iostream>`: For input and output operations.\n- `<cstdlib>`: For `malloc` and `free` functions.\n\n### Relevant Links\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer](https://cwe.mitre.org/data/definitions/119.html)\n- [CWE-401: Missing Release of Memory after Effective Lifetime](https://cwe.mitre.org/data/definitions/401.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-77264e1d-5f8b-41ee-9a20-1f09fc1b6c73",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIncompatible Memory Release Function Usage Vulnerability refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. In Python, this vulnerability is not common because Python uses a garbage collector that automatically manages memory. However, in languages like C++ where developers have to manually manage memory, this vulnerability can occur.\n\nIn the provided code snippet `delete[] xindex;`, the developer is trying to deallocate memory that was presumably allocated using `new[]`. If `xindex` was not allocated using `new[]`, this could lead to undefined behavior and potential security vulnerabilities.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, developers should ensure that they are using the correct function to deallocate memory. If memory was allocated using `new[]`, it should be deallocated using `delete[]`. If it was allocated using `new`, it should be deallocated using `delete`.\n\n## Source Code Fix Recommendation\n\nWithout the full context of the code, it's hard to provide a specific fix. However, the general rule is to match the allocation and deallocation methods. If `xindex` was allocated using `new[]`, the provided code is correct. If it was allocated using `new`, the code should be `delete xindex;`.\n\n## Library Dependencies\n\nThis code snippet is in C++, not Python, and does not appear to require any specific library dependencies.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Memory not on the Heap](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not be accessible at all times."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-c07c7e01-0b8f-4199-a179-e90484c3c519",
+              "help": {
+                "text": "",
+                "markdown": "The \"Incompatible Memory Release Function Vulnerability\" in Python refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. This can lead to unexpected behavior, crashes, or even security vulnerabilities. In your example, `delete[] var;` is a C++ code, not Python. Python uses garbage collection and does not require explicit memory deallocation.\n\nHowever, if we were to discuss this in the context of C++, the vulnerability would occur if `var` was not allocated with `new[]`. For example, if `var` was allocated with `new` (not `new[]`), using `delete[] var;` would be incorrect and could lead to undefined behavior.\n\n## Mitigation\n\nTo mitigate this vulnerability, always ensure that the correct deallocation function is used for each allocation function. In C++, if memory is allocated with `new`, it should be deallocated with `delete`. If memory is allocated with `new[]`, it should be deallocated with `delete[]`.\n\n## Code Fix\n\nIf `var` was allocated with `new`, change `delete[] var;` to `delete var;`.\n\n```cpp\nint* var = new int;\n// ...\ndelete var;\n```\n\nIf `var` was allocated with `new[]`, `delete[] var;` is correct.\n\n```cpp\nint* var = new int[10];\n// ...\ndelete[] var;\n```\n\n## Library Dependencies\n\nThis code does not require any library dependencies to execute properly.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Pointer not at Start of Buffer](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not always be accessible."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-9596da66-ce09-4d30-8e13-5ff92d92fb59",
+              "help": {
+                "text": "",
+                "markdown": "The \"Incompatible Memory Release Function Vulnerability\" in Python refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. This can lead to unexpected behavior, crashes, or even security vulnerabilities. In your example, `delete[] var;` is a C++ code, not Python. Python uses garbage collection and does not require explicit memory deallocation.\n\nHowever, if we were to discuss this in the context of C++, the vulnerability would occur if `var` was not allocated with `new[]`. For example, if `var` was allocated with `new` (not `new[]`), using `delete[] var;` would be incorrect and could lead to undefined behavior.\n\n## Mitigation\n\nTo mitigate this vulnerability, always ensure that the correct deallocation function is used for each allocation function. In C++, if memory is allocated with `new`, it should be deallocated with `delete`. If memory is allocated with `new[]`, it should be deallocated with `delete[]`.\n\n## Code Fix\n\nIf `var` was allocated with `new`, change `delete[] var;` to `delete var;`.\n\n```cpp\nint* var = new int;\n// ...\ndelete var;\n```\n\nIf `var` was allocated with `new[]`, `delete[] var;` is correct.\n\n```cpp\nint* var = new int[10];\n// ...\ndelete[] var;\n```\n\n## Library Dependencies\n\nThis code does not require any library dependencies to execute properly.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Pointer not at Start of Buffer](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not always be accessible."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-218dd94e-45ae-4398-8be2-dff843f503ba",
+              "help": {
+                "text": "",
+                "markdown": "The \"Incompatible Memory Release Function Vulnerability\" in Python refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. This can lead to unexpected behavior, crashes, or even security vulnerabilities. In your example, `delete[] var;` is a C++ code, not Python. Python uses garbage collection and does not require explicit memory deallocation.\n\nHowever, if we were to discuss this in the context of C++, the vulnerability would occur if `var` was not allocated with `new[]`. For example, if `var` was allocated with `new` (not `new[]`), using `delete[] var;` would be incorrect and could lead to undefined behavior.\n\n## Mitigation\n\nTo mitigate this vulnerability, always ensure that the correct deallocation function is used for each allocation function. In C++, if memory is allocated with `new`, it should be deallocated with `delete`. If memory is allocated with `new[]`, it should be deallocated with `delete[]`.\n\n## Code Fix\n\nIf `var` was allocated with `new`, change `delete[] var;` to `delete var;`.\n\n```cpp\nint* var = new int;\n// ...\ndelete var;\n```\n\nIf `var` was allocated with `new[]`, `delete[] var;` is correct.\n\n```cpp\nint* var = new int[10];\n// ...\ndelete[] var;\n```\n\n## Library Dependencies\n\nThis code does not require any library dependencies to execute properly.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Pointer not at Start of Buffer](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not always be accessible."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-16ef407d-c4ba-43cf-ae60-a462dc7009ea",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIncompatible Memory Release Function Usage Vulnerability refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. In Python, this vulnerability is not common because Python uses a garbage collector that automatically manages memory. However, in languages like C++ where developers have to manually manage memory, this vulnerability can occur.\n\nIn the provided code snippet `delete[] amean;`, the developer is trying to deallocate memory that was allocated using `new[]`. If the memory was not allocated using `new[]`, this could lead to undefined behavior and potential security vulnerabilities.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, developers should ensure that they are using the correct function to deallocate memory. If memory was allocated using `new[]`, it should be deallocated using `delete[]`. If it was allocated using `new`, it should be deallocated using `delete`.\n\n## Source Code Fix Recommendation\n\nWithout the full context of the code, it's hard to provide a specific fix. However, the general recommendation would be to ensure that the correct deallocation function is used. If `amean` was allocated using `new[]`, then `delete[] amean;` is correct. If it was allocated using `new`, then the code should be `delete amean;`.\n\n## Library Dependencies\n\nThis code snippet appears to be in C++, not Python. Therefore, it doesn't have any Python library dependencies. In C++, `new` and `delete` are built-in keywords and don't require any library to function.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Pointer not at Start of Buffer](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not be available in the future."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-e33f6a36-1524-404b-8572-d9700d5b829d",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIncompatible Memory Release Function Usage Vulnerability refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. In Python, this vulnerability is not common because Python uses a garbage collector that automatically manages memory. However, in languages like C++ where developers have to manually manage memory, this vulnerability can occur.\n\nIn the provided code snippet `delete[] amean;`, the developer is trying to deallocate memory that was allocated using `new[]`. If the memory was not allocated using `new[]`, this could lead to undefined behavior and potential security vulnerabilities.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, developers should ensure that they are using the correct function to deallocate memory. If memory was allocated using `new[]`, it should be deallocated using `delete[]`. If it was allocated using `new`, it should be deallocated using `delete`.\n\n## Source Code Fix Recommendation\n\nWithout the full context of the code, it's hard to provide a specific fix. However, the general recommendation would be to ensure that the correct deallocation function is used. If `amean` was allocated using `new[]`, then `delete[] amean;` is correct. If it was allocated using `new`, then the code should be `delete amean;`.\n\n## Library Dependencies\n\nThis code snippet appears to be in C++, not Python. Therefore, it doesn't have any Python library dependencies. In C++, `new` and `delete` are built-in keywords and don't require any library to function.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Pointer not at Start of Buffer](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not be available in the future."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-3e993447-b1d3-4649-a7b9-f4f3c656bcda",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ arises when the `malloc` function is used improperly, leading to potential memory allocation issues such as buffer overflows, memory leaks, or improper handling of null pointers. This vulnerability can be exploited to cause a program to crash or behave unpredictably, and in some cases, it can be leveraged to execute arbitrary code.\n\n### General Mitigation Advice\n\n1. **Check for Null Pointers**: Always check the return value of `malloc` to ensure that memory allocation was successful.\n2. **Use Safer Alternatives**: Consider using C++ memory management features like `new` and `delete`, or smart pointers such as `std::unique_ptr` and `std::shared_ptr`.\n3. **Properly Free Memory**: Ensure that all allocated memory is properly freed using `free` to prevent memory leaks.\n4. **Boundary Checks**: Implement boundary checks to prevent buffer overflows.\n5. **Initialize Memory**: Use functions like `calloc` or `memset` to initialize allocated memory.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to properly handle memory allocation using `malloc`:\n\n```cpp\n#include <iostream>\n#include <cstdlib> // Required for malloc and free\n\nint main() {\n    size_t bufsize = 1024;\n    char* buffer = (char*)malloc(bufsize);\n\n    if (buffer == nullptr) {\n        std::cerr << \"Memory allocation failed\" << std::endl;\n        return 1;\n    }\n\n    // Use the buffer for some operations\n    // ...\n\n    // Free the allocated memory\n    free(buffer);\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following library dependencies are required:\n\n- `<iostream>`: For input and output operations.\n- `<cstdlib>`: For `malloc` and `free` functions.\n\n### Relevant Links\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer](https://cwe.mitre.org/data/definitions/119.html)\n- [CWE-401: Missing Release of Memory after Effective Lifetime](https://cwe.mitre.org/data/definitions/401.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-30bcd1b5-da2a-47e6-ae4f-bb69d59360df",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ arises when the `malloc` function is used improperly, leading to potential memory allocation issues such as buffer overflows, memory leaks, or improper handling of null pointers. This vulnerability can be exploited to cause a program to crash or behave unpredictably, and in some cases, it can be leveraged to execute arbitrary code.\n\n### General Mitigation Advice\n\n1. **Check for Null Pointers**: Always check the return value of `malloc` to ensure that memory allocation was successful.\n2. **Use Safer Alternatives**: Consider using C++ memory management features like `new` and `delete`, or smart pointers such as `std::unique_ptr` and `std::shared_ptr`.\n3. **Properly Free Memory**: Ensure that all allocated memory is properly freed using `free` to prevent memory leaks.\n4. **Boundary Checks**: Implement boundary checks to prevent buffer overflows.\n5. **Initialize Memory**: Use functions like `calloc` or `memset` to initialize allocated memory.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to properly handle memory allocation using `malloc`:\n\n```cpp\n#include <iostream>\n#include <cstdlib> // Required for malloc and free\n\nint main() {\n    size_t bufsize = 1024;\n    char* buffer = (char*)malloc(bufsize);\n\n    if (buffer == nullptr) {\n        std::cerr << \"Memory allocation failed\" << std::endl;\n        return 1;\n    }\n\n    // Use the buffer for some operations\n    // ...\n\n    // Free the allocated memory\n    free(buffer);\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following library dependencies are required:\n\n- `<iostream>`: For input and output operations.\n- `<cstdlib>`: For `malloc` and `free` functions.\n\n### Relevant Links\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer](https://cwe.mitre.org/data/definitions/119.html)\n- [CWE-401: Missing Release of Memory after Effective Lifetime](https://cwe.mitre.org/data/definitions/401.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-3ef85b13-b373-4bb4-99a1-b156eae93d7a",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ arises when the `malloc` function is used improperly, leading to potential memory allocation issues such as buffer overflows, memory leaks, or improper handling of null pointers. This vulnerability can be exploited to cause a program to crash or behave unpredictably, and in some cases, it can be leveraged to execute arbitrary code.\n\n### General Mitigation Advice\n\n1. **Check for Null Pointers**: Always check the return value of `malloc` to ensure that memory allocation was successful.\n2. **Use Safer Alternatives**: Consider using C++ memory management features like `new` and `delete`, or smart pointers such as `std::unique_ptr` and `std::shared_ptr`.\n3. **Properly Free Memory**: Ensure that all allocated memory is properly freed using `free` to prevent memory leaks.\n4. **Boundary Checks**: Implement boundary checks to prevent buffer overflows.\n5. **Initialize Memory**: Use functions like `calloc` or `memset` to initialize allocated memory.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to properly handle memory allocation using `malloc`:\n\n```cpp\n#include <iostream>\n#include <cstdlib> // Required for malloc and free\n\nint main() {\n    size_t bufsize = 1024;\n    char* buffer = (char*)malloc(bufsize);\n\n    if (buffer == nullptr) {\n        std::cerr << \"Memory allocation failed\" << std::endl;\n        return 1;\n    }\n\n    // Use the buffer for some operations\n    // ...\n\n    // Free the allocated memory\n    free(buffer);\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following library dependencies are required:\n\n- `<iostream>`: For input and output operations.\n- `<cstdlib>`: For `malloc` and `free` functions.\n\n### Relevant Links\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer](https://cwe.mitre.org/data/definitions/119.html)\n- [CWE-401: Missing Release of Memory after Effective Lifetime](https://cwe.mitre.org/data/definitions/401.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-eada45cb-ba6e-4677-a9e7-a418e870c958",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ typically arises from improper memory allocation practices, such as allocating insufficient memory or failing to check the result of a memory allocation function like `malloc`. In the specific case of `malloc(length + 1)`, the vulnerability may occur if `length` is derived from an untrusted source or if the calculation of `length + 1` results in an integer overflow, leading to a buffer overflow or memory corruption.\n\n### General Mitigation Advice\n\n1. **Input Validation**: Ensure that any input used to calculate the size of memory allocation is validated and sanitized.\n2. **Integer Overflow Checks**: Before performing arithmetic operations for memory allocation, check for potential integer overflows.\n3. **Use Safer Functions**: Consider using safer alternatives like `calloc` or C++ containers (e.g., `std::vector`) that handle memory management more safely.\n4. **Check Allocation Results**: Always check the result of `malloc` to ensure that memory allocation was successful before using the allocated memory.\n\n### Source Code Fix Recommendation\n\n```cpp\n#include <iostream>\n#include <cstdlib> // for malloc and free\n#include <climits> // for SIZE_MAX\n\nvoid safeMalloc(size_t length) {\n    // Check for potential overflow\n    if (length >= SIZE_MAX - 1) {\n        std::cerr << \"Requested length is too large, potential overflow detected.\" << std::endl;\n        return;\n    }\n\n    // Allocate memory safely\n    char* buffer = (char*)malloc(length + 1);\n    if (buffer == nullptr) {\n        std::cerr << \"Memory allocation failed.\" << std::endl;\n        return;\n    }\n\n    // Use the buffer\n    // ...\n\n    // Free the allocated memory\n    free(buffer);\n}\n\nint main() {\n    size_t length = 100; // Example length\n    safeMalloc(length);\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the code example properly, the following standard libraries are required:\n\n- `<iostream>`: For input and output operations.\n- `<cstdlib>`: For `malloc` and `free` functions.\n- `<climits>`: For `SIZE_MAX` to check for potential overflow.\n\n### Relevant Resources\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [OWASP Secure Coding Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/)\n\n### Common Weakness Enumeration\n\n- [CWE-190: Integer Overflow or Wraparound](https://cwe.mitre.org/data/definitions/190.html)\n- [CWE-787: Out-of-bounds Write](https://cwe.mitre.org/data/definitions/787.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-fdedd2f1-163c-4d22-b4ba-c4bb6444934c",
+              "help": {
+                "text": "",
+                "markdown": "### Detected Issue with C Function (strlen) Vulnerability in C++\n\nThe `strlen` function in C/C++ is used to determine the length of a null-terminated string. However, if the input to `strlen` is not properly validated, it can lead to vulnerabilities such as buffer overflows or segmentation faults. This is because `strlen` will continue to read memory until it encounters a null character, which can result in reading beyond the intended buffer if the input is not properly null-terminated.\n\n### General Mitigation Advice\n\n1. **Input Validation**: Always validate input to ensure it is null-terminated before passing it to `strlen`.\n2. **Buffer Size Management**: Ensure that buffers are properly sized and that their size is known and respected throughout the program.\n3. **Use Safer Alternatives**: Consider using safer string handling functions that limit the number of characters processed, such as `strnlen` or C++ string classes like `std::string`.\n\n### Source Code Fix Recommendation\n\n```cpp\n#include <iostream>\n#include <cstring> // Required for strlen\n\nvoid processMessage(const char* msg, size_t maxLength) {\n    if (msg == nullptr) {\n        std::cerr << \"Error: Null pointer received.\" << std::endl;\n        return;\n    }\n\n    // Use strnlen to limit the length of the string processed\n    size_t length = strnlen(msg, maxLength);\n    if (length == maxLength) {\n        std::cerr << \"Warning: Message may not be null-terminated.\" << std::endl;\n    }\n\n    // Proceed with processing the message\n    std::cout << \"Message length: \" << length << std::endl;\n}\n\nint main() {\n    const char* msg = \"Hello, World!\";\n    processMessage(msg, 100); // Specify a maximum length\n    return 0;\n}\n```\n\n### Library Dependencies\n\n- `<iostream>`: For input and output operations.\n- `<cstring>`: For string handling functions like `strlen` and `strnlen`.\n\n### Relevant Resources\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [OWASP Secure Coding Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/)\n\n### Common Weakness Enumeration\n\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)\n- [CWE-126: Buffer Over-read](https://cwe.mitre.org/data/definitions/126.html)\n\nThese links are verified to be active and accessible to anonymous users."
+              },
+              "properties": {
+                "tags": [
+                  "DS140021"
+                ]
+              }
+            },
+            {
+              "id": "glog-95345953-6054-4a53-ac27-89251c8d013a",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ arises when the `malloc` function is used improperly, leading to potential memory allocation issues such as buffer overflows, memory leaks, or improper handling of null pointers. This vulnerability can be exploited to cause a program to crash or behave unpredictably, and in some cases, it can be leveraged to execute arbitrary code.\n\n### General Mitigation Advice\n\n1. **Check for Null Pointers**: Always check the return value of `malloc` to ensure that memory allocation was successful.\n2. **Use Safer Alternatives**: Consider using C++ memory management features like `new` and `delete`, or smart pointers such as `std::unique_ptr` and `std::shared_ptr`.\n3. **Properly Free Memory**: Ensure that all allocated memory is properly freed using `free` to prevent memory leaks.\n4. **Boundary Checks**: Implement boundary checks to prevent buffer overflows.\n5. **Initialize Memory**: Use functions like `calloc` or `memset` to initialize allocated memory.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to properly handle memory allocation using `malloc`:\n\n```cpp\n#include <iostream>\n#include <cstdlib> // Required for malloc and free\n\nint main() {\n    size_t bufsize = 1024;\n    char* buffer = (char*)malloc(bufsize);\n\n    if (buffer == nullptr) {\n        std::cerr << \"Memory allocation failed\" << std::endl;\n        return 1;\n    }\n\n    // Use the buffer for some operations\n    // ...\n\n    // Free the allocated memory\n    free(buffer);\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following library dependencies are required:\n\n- `<iostream>`: For input and output operations.\n- `<cstdlib>`: For `malloc` and `free` functions.\n\n### Relevant Links\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer](https://cwe.mitre.org/data/definitions/119.html)\n- [CWE-401: Missing Release of Memory after Effective Lifetime](https://cwe.mitre.org/data/definitions/401.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-16f3c9bb-0f3f-4444-999f-e9bacbd5d2c6",
+              "help": {
+                "text": "",
+                "markdown": "The \"Incompatible Memory Release Function Vulnerability\" in Python refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. This can lead to unexpected behavior, crashes, or even security vulnerabilities. In your example, `delete[] var;` is a C++ code, not Python. Python uses garbage collection and does not require explicit memory deallocation.\n\nHowever, if we were to discuss this in the context of C++, the vulnerability would occur if `var` was not allocated with `new[]`. For example, if `var` was allocated with `new` (not `new[]`), using `delete[] var;` would be incorrect and could lead to undefined behavior.\n\n## Mitigation\n\nTo mitigate this vulnerability, always ensure that the correct deallocation function is used for each allocation function. In C++, if memory is allocated with `new`, it should be deallocated with `delete`. If memory is allocated with `new[]`, it should be deallocated with `delete[]`.\n\n## Code Fix\n\nIf `var` was allocated with `new`, change `delete[] var;` to `delete var;`.\n\n```cpp\nint* var = new int;\n// ...\ndelete var;\n```\n\nIf `var` was allocated with `new[]`, `delete[] var;` is correct.\n\n```cpp\nint* var = new int[10];\n// ...\ndelete[] var;\n```\n\n## Library Dependencies\n\nThis code does not require any library dependencies to execute properly.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Pointer not at Start of Buffer](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not always be accessible."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-b2489c0f-d317-4424-ae18-fd73d6fd52a2",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ arises when the `malloc` function is used improperly, leading to potential memory allocation issues such as buffer overflows, memory leaks, or improper handling of null pointers. This vulnerability can be exploited to cause a program to crash or behave unpredictably, and in some cases, it can be leveraged to execute arbitrary code.\n\n### General Mitigation Advice\n\n1. **Check for Null Pointers**: Always check the return value of `malloc` to ensure that memory allocation was successful.\n2. **Use Safer Alternatives**: Consider using C++ memory management features like `new` and `delete`, or smart pointers such as `std::unique_ptr` and `std::shared_ptr`.\n3. **Properly Free Memory**: Ensure that all allocated memory is properly freed using `free` to prevent memory leaks.\n4. **Boundary Checks**: Implement boundary checks to prevent buffer overflows.\n5. **Initialize Memory**: Use functions like `calloc` or `memset` to initialize allocated memory.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to properly handle memory allocation using `malloc`:\n\n```cpp\n#include <iostream>\n#include <cstdlib> // Required for malloc and free\n\nint main() {\n    size_t bufsize = 1024;\n    char* buffer = (char*)malloc(bufsize);\n\n    if (buffer == nullptr) {\n        std::cerr << \"Memory allocation failed\" << std::endl;\n        return 1;\n    }\n\n    // Use the buffer for some operations\n    // ...\n\n    // Free the allocated memory\n    free(buffer);\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following library dependencies are required:\n\n- `<iostream>`: For input and output operations.\n- `<cstdlib>`: For `malloc` and `free` functions.\n\n### Relevant Links\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer](https://cwe.mitre.org/data/definitions/119.html)\n- [CWE-401: Missing Release of Memory after Effective Lifetime](https://cwe.mitre.org/data/definitions/401.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-8ee95964-befd-4cff-b6e1-00f8424a302e",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ arises when the `malloc` function is used improperly, leading to potential memory allocation issues such as buffer overflows, memory leaks, or improper handling of null pointers. This vulnerability can be exploited to cause a program to crash or behave unpredictably, and in some cases, it can be leveraged to execute arbitrary code.\n\n### General Mitigation Advice\n\n1. **Check for Null Pointers**: Always check the return value of `malloc` to ensure that memory allocation was successful.\n2. **Use Safer Alternatives**: Consider using C++ memory management features like `new` and `delete`, or smart pointers such as `std::unique_ptr` and `std::shared_ptr`.\n3. **Properly Free Memory**: Ensure that all allocated memory is properly freed using `free` to prevent memory leaks.\n4. **Boundary Checks**: Implement boundary checks to prevent buffer overflows.\n5. **Initialize Memory**: Use functions like `calloc` or `memset` to initialize allocated memory.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to properly handle memory allocation using `malloc`:\n\n```cpp\n#include <iostream>\n#include <cstdlib> // Required for malloc and free\n\nint main() {\n    size_t bufsize = 1024;\n    char* buffer = (char*)malloc(bufsize);\n\n    if (buffer == nullptr) {\n        std::cerr << \"Memory allocation failed\" << std::endl;\n        return 1;\n    }\n\n    // Use the buffer for some operations\n    // ...\n\n    // Free the allocated memory\n    free(buffer);\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following library dependencies are required:\n\n- `<iostream>`: For input and output operations.\n- `<cstdlib>`: For `malloc` and `free` functions.\n\n### Relevant Links\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer](https://cwe.mitre.org/data/definitions/119.html)\n- [CWE-401: Missing Release of Memory after Effective Lifetime](https://cwe.mitre.org/data/definitions/401.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-dabb99fe-0d7c-470f-8d04-fc3f40820a67",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ typically arises from improper use of the `malloc` function, which is used to allocate memory dynamically. The specific issue with `malloc(sz * sizeof(int64_t))` can occur if `sz` is not properly validated, leading to potential integer overflow or underflow. This can result in allocating less memory than intended, causing buffer overflows, memory corruption, or even denial of service.\n\n### General Mitigation Advice\n\n1. **Input Validation**: Always validate input values to ensure they are within expected ranges before using them in memory allocation functions.\n2. **Check for Overflow**: Before performing arithmetic operations for memory allocation, check for potential overflow conditions.\n3. **Use Safer Alternatives**: Consider using safer memory allocation functions that automatically handle size calculations and overflow checks, such as `calloc`.\n4. **Error Handling**: Always check the return value of `malloc` to ensure that memory allocation was successful before using the allocated memory.\n\n### Source Code Fix Recommendation\n\n```cpp\n#include <iostream>\n#include <cstdlib>\n#include <cstdint>\n#include <limits>\n\nint main() {\n    size_t sz = 10; // Example size, should be validated\n    if (sz > std::numeric_limits<size_t>::max() / sizeof(int64_t)) {\n        std::cerr << \"Size too large, potential overflow detected.\" << std::endl;\n        return EXIT_FAILURE;\n    }\n\n    int64_t* ptr = static_cast<int64_t*>(malloc(sz * sizeof(int64_t)));\n    if (ptr == nullptr) {\n        std::cerr << \"Memory allocation failed.\" << std::endl;\n        return EXIT_FAILURE;\n    }\n\n    // Use the allocated memory\n\n    free(ptr);\n    return EXIT_SUCCESS;\n}\n```\n\n### Library Dependencies\n\n- `<iostream>`: For input and output operations.\n- `<cstdlib>`: For `malloc`, `free`, and `EXIT_FAILURE`.\n- `<cstdint>`: For fixed-width integer types like `int64_t`.\n- `<limits>`: For checking the maximum size of `size_t`.\n\n### OWASP Resources\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [OWASP Secure Coding Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-190: Integer Overflow or Wraparound](https://cwe.mitre.org/data/definitions/190.html)\n- [CWE-787: Out-of-bounds Write](https://cwe.mitre.org/data/definitions/787.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-923fee30-d777-4178-8abd-b9cb20ce5136",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ typically arises from improper use of the `malloc` function, which is used to allocate memory dynamically. The specific vulnerability sink `malloc(sz * sizeof(char *))` suggests that there is a potential issue with the way memory is being allocated. This can lead to buffer overflows, memory leaks, or undefined behavior if not handled correctly. The problem here is that `malloc` is being used to allocate memory for an array of character pointers, but the size calculation might be incorrect or not properly checked, leading to insufficient memory allocation.\n\n### General Mitigation Advice\n\n1. **Validate Input**: Always validate the input size before using it in memory allocation functions.\n2. **Check Return Values**: Always check the return value of `malloc` to ensure that memory allocation was successful.\n3. **Use Safer Alternatives**: Consider using `new` in C++ for memory allocation, which throws an exception on failure, or use smart pointers like `std::unique_ptr` or `std::shared_ptr`.\n4. **Free Allocated Memory**: Ensure that all dynamically allocated memory is properly freed to avoid memory leaks.\n5. **Use `sizeof` Correctly**: Ensure that `sizeof` is used correctly to calculate the size of the memory block needed.\n\n### Source Code Fix Recommendation\n\nHere is a corrected version of the code snippet:\n\n```cpp\n#include <iostream>\n#include <cstdlib> // for malloc and free\n\nint main() {\n    size_t sz = 10; // Example size\n    char **array = static_cast<char **>(malloc(sz * sizeof(char *)));\n\n    if (array == nullptr) {\n        std::cerr << \"Memory allocation failed\" << std::endl;\n        return 1;\n    }\n\n    // Use the allocated memory...\n\n    // Free the allocated memory\n    free(array);\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following standard libraries are required:\n\n- `<iostream>`: For input and output operations.\n- `<cstdlib>`: For `malloc` and `free` functions.\n\n### Relevant Links\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [OWASP Secure Coding Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/)\n- [CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer](https://cwe.mitre.org/data/definitions/119.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-d9d49ae7-8a91-4206-974a-a688f34491b4",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIncompatible Memory Release Function Usage Vulnerability refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. In Python, this vulnerability is not common because Python uses a garbage collector that automatically manages memory. However, in languages like C++ where developers have to manually manage memory, this vulnerability can occur.\n\nIn the provided code snippet `delete[] amean;`, the developer is trying to deallocate memory that was allocated using `new[]`. If the memory was not allocated using `new[]`, this could lead to undefined behavior and potential security vulnerabilities.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, developers should ensure that they are using the correct function to deallocate memory. If memory was allocated using `new[]`, it should be deallocated using `delete[]`. If it was allocated using `new`, it should be deallocated using `delete`.\n\n## Source Code Fix Recommendation\n\nWithout the full context of the code, it's hard to provide a specific fix. However, the general recommendation would be to ensure that the correct deallocation function is used. If `amean` was allocated using `new[]`, then `delete[] amean;` is correct. If it was allocated using `new`, then the code should be `delete amean;`.\n\n## Library Dependencies\n\nThis code snippet appears to be in C++, not Python. Therefore, it doesn't have any Python library dependencies. In C++, `new` and `delete` are built-in keywords and don't require any library to function.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Pointer not at Start of Buffer](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not be available in the future."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-6d28f2fb-9a62-4e8c-97b2-5835e6127fb6",
+              "help": {
+                "text": "",
+                "markdown": "The \"Incompatible Memory Release Function Vulnerability\" in Python refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. This can lead to unexpected behavior, crashes, or even security vulnerabilities. In your example, `delete[] var;` is a C++ code, not Python. Python uses garbage collection and does not require explicit memory deallocation.\n\nHowever, if we were to discuss this in the context of C++, the vulnerability would occur if `var` was not allocated with `new[]`. For example, if `var` was allocated with `new` (not `new[]`), using `delete[] var;` would be incorrect and could lead to undefined behavior.\n\n## Mitigation\n\nTo mitigate this vulnerability, always ensure that the correct deallocation function is used for each allocation function. In C++, if memory is allocated with `new`, it should be deallocated with `delete`. If memory is allocated with `new[]`, it should be deallocated with `delete[]`.\n\n## Code Fix\n\nIf `var` was allocated with `new`, change `delete[] var;` to `delete var;`.\n\n```cpp\nint* var = new int;\n// ...\ndelete var;\n```\n\nIf `var` was allocated with `new[]`, `delete[] var;` is correct.\n\n```cpp\nint* var = new int[10];\n// ...\ndelete[] var;\n```\n\n## Library Dependencies\n\nThis code does not require any library dependencies to execute properly.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Pointer not at Start of Buffer](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not always be accessible."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-f680924e-e0ed-498a-a560-9d8328ce9158",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIncompatible Memory Release Function Usage Vulnerability refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. In Python, this vulnerability is not common because Python uses a garbage collector that automatically manages memory. However, in languages like C++ where developers have to manually manage memory, this vulnerability can occur.\n\nIn the provided code snippet `delete[] amean;`, the developer is trying to deallocate memory that was allocated using `new[]`. If the memory was not allocated using `new[]`, this could lead to undefined behavior and potential security vulnerabilities.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, developers should ensure that they are using the correct function to deallocate memory. If memory was allocated using `new[]`, it should be deallocated using `delete[]`. If it was allocated using `new`, it should be deallocated using `delete`.\n\n## Source Code Fix Recommendation\n\nWithout the full context of the code, it's hard to provide a specific fix. However, the general recommendation would be to ensure that the correct deallocation function is used. If `amean` was allocated using `new[]`, then `delete[] amean;` is correct. If it was allocated using `new`, then the code should be `delete amean;`.\n\n## Library Dependencies\n\nThis code snippet appears to be in C++, not Python. Therefore, it doesn't have any Python library dependencies. In C++, `new` and `delete` are built-in keywords and don't require any library to function.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Pointer not at Start of Buffer](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not be available in the future."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-9ada1bee-b21f-4b67-897d-c6b895145608",
+              "help": {
+                "text": "",
+                "markdown": "The provided code snippet is not Python, but C++. The `delete[] var;` statement is used in C++ to deallocate memory that was previously allocated with `new[]`. Python uses a garbage collector for memory management, so there is no direct equivalent to this in Python.\n\nHowever, Python does have its own potential memory management issues. One of these is the potential for memory leaks, which can occur when objects are not properly de-referenced and thus not eligible for garbage collection. This can lead to excessive memory usage and potentially cause the program to crash.\n\n## Mitigation\n\nTo avoid memory leaks in Python, ensure that objects are properly de-referenced when they are no longer needed. This can often be achieved by using context managers (`with` statements) or by manually setting objects to `None` when they are no longer needed.\n\n## Code Fix\n\nHere is an example of how to use a context manager to ensure that a file object is properly closed (and thus de-referenced) after use:\n\n```python\nwith open('file.txt', 'r') as f:\n    content = f.read()\n# At this point, f is automatically closed and de-referenced\n```\n\n## Library Dependencies\n\nPython's garbage collector is part of the standard library, so no additional library dependencies are required for memory management.\n\n## OWASP and CWE Links\n\n- [CWE-401: Missing Release of Memory after Effective Lifetime](https://cwe.mitre.org/data/definitions/401.html)"
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-75856fb2-b9b7-42c8-a5ec-2aa7b917e19d",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIncompatible Memory Release Function Usage Vulnerability refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. In Python, this vulnerability is not common because Python uses a garbage collector that automatically manages memory. However, in languages like C++ where developers have to manually manage memory, this vulnerability can occur.\n\nIn the provided code snippet `delete[] amean;`, the developer is trying to deallocate memory that was allocated using `new[]`. If the memory was not allocated using `new[]`, this could lead to undefined behavior and potential security vulnerabilities.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, developers should ensure that they are using the correct function to deallocate memory. If memory was allocated using `new[]`, it should be deallocated using `delete[]`. If it was allocated using `new`, it should be deallocated using `delete`.\n\n## Source Code Fix Recommendation\n\nWithout the full context of the code, it's hard to provide a specific fix. However, the general recommendation would be to ensure that the correct deallocation function is used. If `amean` was allocated using `new[]`, then `delete[] amean;` is correct. If it was allocated using `new`, then the code should be `delete amean;`.\n\n## Library Dependencies\n\nThis code snippet appears to be in C++, not Python. Therefore, it doesn't have any Python library dependencies. In C++, `new` and `delete` are built-in keywords and don't require any library to function.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Pointer not at Start of Buffer](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not be available in the future."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-85e6a839-31a6-440c-af81-c8b0cdd45e5f",
+              "help": {
+                "text": "",
+                "markdown": "The \"Incompatible Memory Release Function Vulnerability\" in Python refers to a situation where a programmer uses an incorrect function to deallocate memory that was allocated using a different function. This can lead to unexpected behavior, crashes, or even security vulnerabilities. In your example, `delete[] var;` is a C++ code, not Python. Python uses garbage collection and does not require explicit memory deallocation.\n\nHowever, if we were to discuss this in the context of C++, the vulnerability would occur if `var` was not allocated with `new[]`. For example, if `var` was allocated with `new` (not `new[]`), using `delete[] var;` would be incorrect and could lead to undefined behavior.\n\n## Mitigation\n\nTo mitigate this vulnerability, always ensure that the correct deallocation function is used for each allocation function. In C++, if memory is allocated with `new`, it should be deallocated with `delete`. If memory is allocated with `new[]`, it should be deallocated with `delete[]`.\n\n## Code Fix\n\nIf `var` was allocated with `new`, change `delete[] var;` to `delete var;`.\n\n```cpp\nint* var = new int;\n// ...\ndelete var;\n```\n\nIf `var` was allocated with `new[]`, `delete[] var;` is correct.\n\n```cpp\nint* var = new int[10];\n// ...\ndelete[] var;\n```\n\n## Library Dependencies\n\nThis code does not require any library dependencies to execute properly.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Pointer not at Start of Buffer](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that these links are subject to change and may not always be accessible."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            },
+            {
+              "id": "glog-69060c76-5db7-460e-9df6-b801f62cfb07",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIncompatible Memory Release Function Usage Vulnerability in Python refers to a situation where a developer uses an incorrect function to deallocate memory that was allocated using a different function. This can lead to unexpected behavior, crashes, or even security vulnerabilities. In Python, this is less common due to its garbage collection mechanism, but it can still occur in some cases, especially when interfacing with C/C++ code using Python's ctypes library.\n\nIn the provided code snippet, the developer is using the `delete[]` operator to deallocate memory that was presumably allocated using `new[]`. This is a C++ code, not Python. If this was Python code interfacing with C/C++ code, the vulnerability could occur if the developer used the wrong ctypes function to deallocate the memory.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, developers should ensure they are using the correct function to deallocate memory. In Python, this usually means allowing the garbage collector to do its job, or if interfacing with C/C++ code, using the correct ctypes function.\n\n## Source Code Fix Recommendation\n\nSince the provided code is C++, not Python, the fix would be to ensure that the memory for `A_temp` was indeed allocated with `new[]`. If it was not, the developer should use the correct deallocation function.\n\nIf this was Python code interfacing with C/C++ code, the developer should ensure they are using the correct ctypes function to deallocate the memory. For example, if the memory was allocated with `ctypes.create_string_buffer`, it should be deallocated with `ctypes.string_at`.\n\n## Library Dependencies\n\nThe provided code is C++, not Python, so it does not have any Python library dependencies. If this was Python code interfacing with C/C++ code, it would require the ctypes library.\n\n## OWASP and CWE Links\n\n- [CWE-761: Free of Memory not on the Heap](https://cwe.mitre.org/data/definitions/761.html)\n\nPlease note that the CWE link is a general link related to incorrect memory deallocation. There is no specific CWE for this vulnerability in Python as it is less common due to Python's garbage collection mechanism."
+              },
+              "properties": {
+                "tags": [
+                  "resources.rules.raptor-mismatched-memory-management-cpp"
+                ]
+              }
+            }
+          ],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        }
+      },
+      "language": "en-US",
+      "results": [
+        {
+          "ruleId": "glog-cfbfbf90-d7a1-4707-8508-8c45afc63133",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Invalid input."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python_interface/python_package/bindings/basic_stats_py.hpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 402,
+                  "startColumn": 17,
+                  "endLine": 402,
+                  "endColumn": 86,
+                  "snippet": {
+                    "text": "                memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T) * X.size());"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "ca54151f4d7467e20ece0353a277abb70d8bb99ff4afee53c750a4ed93cc52fbbb0d808338e803233d4ce1cabed8aba7c2075a448d261e4de782b5a3563ef35c_1"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-916b2029-e80c-4fd6-8b47-b0f6e3cfaccf",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (memcpy)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python_interface/python_package/bindings/basic_stats_py.hpp"
+                },
+                "region": {
+                  "startLine": 490,
+                  "startColumn": 16,
+                  "endLine": 490,
+                  "endColumn": 73,
+                  "charOffset": 18646,
+                  "charLength": 57,
+                  "snippet": {
+                    "text": "memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)",
+                    "rendered": {
+                      "text": "memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)",
+                      "markdown": "`memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "There are a number of conditions in which memcpy can introduce a vulnerability (mismatched buffer sizes, null pointers, etc.). More secure alternitives perform additional validation of the source and destination buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "python_interface/python_package/bindings/basic_stats_py.hpp"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 18646,
+                        "charLength": 57
+                      },
+                      "insertedContent": {
+                        "text": "memcpy_s(copy_X.mutable_data(), <size of copy_X.mutable_data()>,  X.mutable_data(),  sizeof(T)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-2d758242-b2a3-4aa8-b8b1-9568b5d4bc10",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Invalid input."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python_interface/python_package/bindings/basic_stats_py.hpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 457,
+                  "startColumn": 17,
+                  "endLine": 457,
+                  "endColumn": 86,
+                  "snippet": {
+                    "text": "                memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T) * X.size());"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "ca54151f4d7467e20ece0353a277abb70d8bb99ff4afee53c750a4ed93cc52fbbb0d808338e803233d4ce1cabed8aba7c2075a448d261e4de782b5a3563ef35c_4"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-02398af2-a05b-48de-97ec-7200e451d730",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (memcpy)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python_interface/python_package/bindings/basic_stats_py.hpp"
+                },
+                "region": {
+                  "startLine": 471,
+                  "startColumn": 16,
+                  "endLine": 471,
+                  "endColumn": 73,
+                  "charOffset": 17779,
+                  "charLength": 57,
+                  "snippet": {
+                    "text": "memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)",
+                    "rendered": {
+                      "text": "memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)",
+                      "markdown": "`memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "There are a number of conditions in which memcpy can introduce a vulnerability (mismatched buffer sizes, null pointers, etc.). More secure alternitives perform additional validation of the source and destination buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "python_interface/python_package/bindings/basic_stats_py.hpp"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 17779,
+                        "charLength": 57
+                      },
+                      "insertedContent": {
+                        "text": "memcpy_s(copy_X.mutable_data(), <size of copy_X.mutable_data()>,  X.mutable_data(),  sizeof(T)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-267b6b74-bdd0-4f0b-a5d2-63cf3a90177a",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (memcpy)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python_interface/python_package/bindings/basic_stats_py.hpp"
+                },
+                "region": {
+                  "startLine": 457,
+                  "startColumn": 16,
+                  "endLine": 457,
+                  "endColumn": 73,
+                  "charOffset": 17074,
+                  "charLength": 57,
+                  "snippet": {
+                    "text": "memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)",
+                    "rendered": {
+                      "text": "memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)",
+                      "markdown": "`memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "There are a number of conditions in which memcpy can introduce a vulnerability (mismatched buffer sizes, null pointers, etc.). More secure alternitives perform additional validation of the source and destination buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "python_interface/python_package/bindings/basic_stats_py.hpp"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 17074,
+                        "charLength": 57
+                      },
+                      "insertedContent": {
+                        "text": "memcpy_s(copy_X.mutable_data(), <size of copy_X.mutable_data()>,  X.mutable_data(),  sizeof(T)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-147221d9-f93a-486d-aa71-f7b40858fbf4",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Invalid input."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python_interface/python_package/bindings/basic_stats_py.hpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 423,
+                  "startColumn": 17,
+                  "endLine": 423,
+                  "endColumn": 86,
+                  "snippet": {
+                    "text": "                memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T) * X.size());"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "ca54151f4d7467e20ece0353a277abb70d8bb99ff4afee53c750a4ed93cc52fbbb0d808338e803233d4ce1cabed8aba7c2075a448d261e4de782b5a3563ef35c_2"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-02cefe4d-91f0-4e78-a3c9-ab3fb7cedb9d",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Invalid input."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python_interface/python_package/bindings/basic_stats_py.hpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 437,
+                  "startColumn": 17,
+                  "endLine": 437,
+                  "endColumn": 86,
+                  "snippet": {
+                    "text": "                memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T) * X.size());"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "ca54151f4d7467e20ece0353a277abb70d8bb99ff4afee53c750a4ed93cc52fbbb0d808338e803233d4ce1cabed8aba7c2075a448d261e4de782b5a3563ef35c_3"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-bb00a109-38e2-49f8-b6d6-9bd5fa579e58",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (memcpy)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python_interface/python_package/bindings/basic_stats_py.hpp"
+                },
+                "region": {
+                  "startLine": 437,
+                  "startColumn": 16,
+                  "endLine": 437,
+                  "endColumn": 73,
+                  "charOffset": 16135,
+                  "charLength": 57,
+                  "snippet": {
+                    "text": "memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)",
+                    "rendered": {
+                      "text": "memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)",
+                      "markdown": "`memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "There are a number of conditions in which memcpy can introduce a vulnerability (mismatched buffer sizes, null pointers, etc.). More secure alternitives perform additional validation of the source and destination buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "python_interface/python_package/bindings/basic_stats_py.hpp"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 16135,
+                        "charLength": 57
+                      },
+                      "insertedContent": {
+                        "text": "memcpy_s(copy_X.mutable_data(), <size of copy_X.mutable_data()>,  X.mutable_data(),  sizeof(T)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-54f559df-b13a-4ebe-a110-c7abdb9d8f0b",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (memcpy)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python_interface/python_package/bindings/basic_stats_py.hpp"
+                },
+                "region": {
+                  "startLine": 402,
+                  "startColumn": 16,
+                  "endLine": 402,
+                  "endColumn": 73,
+                  "charOffset": 14458,
+                  "charLength": 57,
+                  "snippet": {
+                    "text": "memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)",
+                    "rendered": {
+                      "text": "memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)",
+                      "markdown": "`memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "There are a number of conditions in which memcpy can introduce a vulnerability (mismatched buffer sizes, null pointers, etc.). More secure alternitives perform additional validation of the source and destination buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "python_interface/python_package/bindings/basic_stats_py.hpp"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 14458,
+                        "charLength": 57
+                      },
+                      "insertedContent": {
+                        "text": "memcpy_s(copy_X.mutable_data(), <size of copy_X.mutable_data()>,  X.mutable_data(),  sizeof(T)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-9269da09-fc7f-48c2-b100-4473a09854af",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (memcpy)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python_interface/python_package/bindings/basic_stats_py.hpp"
+                },
+                "region": {
+                  "startLine": 386,
+                  "startColumn": 16,
+                  "endLine": 386,
+                  "endColumn": 73,
+                  "charOffset": 13691,
+                  "charLength": 57,
+                  "snippet": {
+                    "text": "memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)",
+                    "rendered": {
+                      "text": "memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)",
+                      "markdown": "`memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "There are a number of conditions in which memcpy can introduce a vulnerability (mismatched buffer sizes, null pointers, etc.). More secure alternitives perform additional validation of the source and destination buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "python_interface/python_package/bindings/basic_stats_py.hpp"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 13691,
+                        "charLength": 57
+                      },
+                      "insertedContent": {
+                        "text": "memcpy_s(copy_X.mutable_data(), <size of copy_X.mutable_data()>,  X.mutable_data(),  sizeof(T)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-8309e604-848c-467b-8e01-1f88b2294190",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Invalid input."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python_interface/python_package/bindings/basic_stats_py.hpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 471,
+                  "startColumn": 17,
+                  "endLine": 471,
+                  "endColumn": 86,
+                  "snippet": {
+                    "text": "                memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T) * X.size());"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "ca54151f4d7467e20ece0353a277abb70d8bb99ff4afee53c750a4ed93cc52fbbb0d808338e803233d4ce1cabed8aba7c2075a448d261e4de782b5a3563ef35c_5"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-95c581d3-d6e0-40b8-9145-b31af4458677",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (memcpy)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python_interface/python_package/bindings/basic_stats_py.hpp"
+                },
+                "region": {
+                  "startLine": 423,
+                  "startColumn": 16,
+                  "endLine": 423,
+                  "endColumn": 73,
+                  "charOffset": 15430,
+                  "charLength": 57,
+                  "snippet": {
+                    "text": "memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)",
+                    "rendered": {
+                      "text": "memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)",
+                      "markdown": "`memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T)`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "There are a number of conditions in which memcpy can introduce a vulnerability (mismatched buffer sizes, null pointers, etc.). More secure alternitives perform additional validation of the source and destination buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "python_interface/python_package/bindings/basic_stats_py.hpp"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 15430,
+                        "charLength": 57
+                      },
+                      "insertedContent": {
+                        "text": "memcpy_s(copy_X.mutable_data(), <size of copy_X.mutable_data()>,  X.mutable_data(),  sizeof(T)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-aeb2a3a9-947d-4d24-a32e-8e63f97c62bb",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Invalid input."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python_interface/python_package/bindings/basic_stats_py.hpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 490,
+                  "startColumn": 17,
+                  "endLine": 490,
+                  "endColumn": 86,
+                  "snippet": {
+                    "text": "                memcpy(copy_X.mutable_data(), X.mutable_data(), sizeof(T) * X.size());"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "ca54151f4d7467e20ece0353a277abb70d8bb99ff4afee53c750a4ed93cc52fbbb0d808338e803233d4ce1cabed8aba7c2075a448d261e4de782b5a3563ef35c_6"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-5af60c57-5868-4d9c-92be-db7ef8978df1",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 786,
+                  "startColumn": 26,
+                  "endLine": 786,
+                  "endColumn": 41,
+                  "charOffset": 27110,
+                  "charLength": 15,
+                  "snippet": {
+                    "text": "malloc(bufsize)",
+                    "rendered": {
+                      "text": "malloc(bufsize)",
+                      "markdown": "`malloc(bufsize)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 27110,
+                        "charLength": 15
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-d6e1f280-7bd3-45d8-85f1-4f4fb6a357ed",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Usage Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/order_statistics.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 242,
+                  "startColumn": 13,
+                  "endLine": 242,
+                  "endColumn": 29,
+                  "snippet": {
+                    "text": "            delete[] xindex;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "0566f6c1dcfa563eb35ce67e0ff96534a0cec5971f22dd0443e374d6b6fc171db4c9ed91957570bd8ee0d46e36d87759441d1c10da467ac80b4a7393c9bd1652_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-6da37fcd-9e95-4c20-afd5-d4bea79f4754",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Usage Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/order_statistics.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 247,
+                  "startColumn": 5,
+                  "endLine": 247,
+                  "endColumn": 21,
+                  "snippet": {
+                    "text": "    delete[] xindex;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "0566f6c1dcfa563eb35ce67e0ff96534a0cec5971f22dd0443e374d6b6fc171db4c9ed91957570bd8ee0d46e36d87759441d1c10da467ac80b4a7393c9bd1652_1"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-b32d999f-d7d2-4876-b532-e8a551a4358d",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Usage Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/order_statistics.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 412,
+                  "startColumn": 13,
+                  "endLine": 412,
+                  "endColumn": 29,
+                  "snippet": {
+                    "text": "            delete[] xindex;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "0566f6c1dcfa563eb35ce67e0ff96534a0cec5971f22dd0443e374d6b6fc171db4c9ed91957570bd8ee0d46e36d87759441d1c10da467ac80b4a7393c9bd1652_2"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-fb7b0b94-27e3-4272-ac62-2ea27ef8fef2",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python_interface/python_package/bindings/utilities_py.hpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 108,
+                  "startColumn": 9,
+                  "endLine": 108,
+                  "endColumn": 23,
+                  "snippet": {
+                    "text": "        free(message);"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "b1d372d61925dc460341b179be70e4070feb0c960989192e9083f6b75e078501ca6e68f6baccdea08d5be2889e5367a4c457b9bdde3b4c07b16e396abc6b9807_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-1009ff69-5e45-47c3-b4a6-ff6ba1a0d190",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 681,
+                  "startColumn": 26,
+                  "endLine": 681,
+                  "endColumn": 41,
+                  "charOffset": 21242,
+                  "charLength": 15,
+                  "snippet": {
+                    "text": "malloc(bufsize)",
+                    "rendered": {
+                      "text": "malloc(bufsize)",
+                      "markdown": "`malloc(bufsize)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 21242,
+                        "charLength": 15
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-1269548a-19ca-4ddb-a2b5-20a32030ebeb",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Usage Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/statistical_utilities.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 126,
+                  "startColumn": 13,
+                  "endLine": 126,
+                  "endColumn": 28,
+                  "snippet": {
+                    "text": "            delete[] amean;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "a1a1a1aa305ba342717244fbaceb852e79f0f51d26cdd5768bad94b2e280fb16d94ec7211c9fff3193f5e805bd5231277eb5ce0f24b22752d7562edc69c1f637_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-6e4a12fd-de74-4d8a-8832-984d563cd86a",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Usage Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/correlation_and_covariance.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 131,
+                  "startColumn": 5,
+                  "endLine": 131,
+                  "endColumn": 21,
+                  "snippet": {
+                    "text": "    delete[] x_copy;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "f0af45afdd23294d49c3c6ca4da81f363fb3ddcb05166ea8130152f24d409652edce3b207fc6ed78529c79ee4031030fab86a0ec6f3b813e52a254b0719e3e65_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-82f03f90-7b66-4051-a4d3-d5bd196ed8cc",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Identified Issue with C Function (strlen)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 1239,
+                  "startColumn": 22,
+                  "endLine": 1239,
+                  "endColumn": 61,
+                  "charOffset": 41348,
+                  "charLength": 39,
+                  "snippet": {
+                    "text": "strlen(self->words[word_deletions - 1])",
+                    "rendered": {
+                      "text": "strlen(self->words[word_deletions - 1])",
+                      "markdown": "`strlen(self->words[word_deletions - 1])`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If a string is missing a null terminator, strlen will read past the end of the buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 41348,
+                        "charLength": 39
+                      },
+                      "insertedContent": {
+                        "text": "strlen_s(self->words[word_deletions - 1], <size of self->words[word_deletions - 1]>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "description": {
+                "text": "If a string is missing a null terminator, strlen will read past the end of the buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 41348,
+                        "charLength": 39
+                      },
+                      "insertedContent": {
+                        "text": "strnlen(self->words[word_deletions - 1], <size of self->words[word_deletions - 1]>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-e19d5fdb-f19c-4eb2-a7db-71e10c04af4e",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 1202,
+                  "startColumn": 34,
+                  "endLine": 1202,
+                  "endColumn": 49,
+                  "charOffset": 40472,
+                  "charLength": 15,
+                  "snippet": {
+                    "text": "malloc(bufsize)",
+                    "rendered": {
+                      "text": "malloc(bufsize)",
+                      "markdown": "`malloc(bufsize)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 40472,
+                        "charLength": 15
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-45d6281d-5c76-4ad5-ab8f-dc658d8239ae",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 1196,
+                  "startColumn": 34,
+                  "endLine": 1196,
+                  "endColumn": 49,
+                  "charOffset": 40253,
+                  "charLength": 15,
+                  "snippet": {
+                    "text": "malloc(bufsize)",
+                    "rendered": {
+                      "text": "malloc(bufsize)",
+                      "markdown": "`malloc(bufsize)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 40253,
+                        "charLength": 15
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-78af6155-f22c-4da3-93c8-83ac7520ea42",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 651,
+                  "startColumn": 26,
+                  "endLine": 651,
+                  "endColumn": 41,
+                  "charOffset": 20105,
+                  "charLength": 15,
+                  "snippet": {
+                    "text": "malloc(bufsize)",
+                    "rendered": {
+                      "text": "malloc(bufsize)",
+                      "markdown": "`malloc(bufsize)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 20105,
+                        "charLength": 15
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-77264e1d-5f8b-41ee-9a20-1f09fc1b6c73",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Usage Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/order_statistics.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 417,
+                  "startColumn": 5,
+                  "endLine": 417,
+                  "endColumn": 21,
+                  "snippet": {
+                    "text": "    delete[] xindex;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "0566f6c1dcfa563eb35ce67e0ff96534a0cec5971f22dd0443e374d6b6fc171db4c9ed91957570bd8ee0d46e36d87759441d1c10da467ac80b4a7393c9bd1652_3"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-c07c7e01-0b8f-4199-a179-e90484c3c519",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/statistical_utilities.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 13,
+                  "endLine": 127,
+                  "endColumn": 26,
+                  "snippet": {
+                    "text": "            delete[] var;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "1d0aa9ca3a81218e7ab12429c5d47e754bc8d9124c380a83476ee5f6b96d0c4ab85bd06209633645851608d94856ef697d6416c2a441b6837095d005456afcd5_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-9596da66-ce09-4d30-8e13-5ff92d92fb59",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/statistical_utilities.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 171,
+                  "startColumn": 17,
+                  "endLine": 171,
+                  "endColumn": 30,
+                  "snippet": {
+                    "text": "                delete[] var;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "1d0aa9ca3a81218e7ab12429c5d47e754bc8d9124c380a83476ee5f6b96d0c4ab85bd06209633645851608d94856ef697d6416c2a441b6837095d005456afcd5_2"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-218dd94e-45ae-4398-8be2-dff843f503ba",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/statistical_utilities.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 149,
+                  "startColumn": 17,
+                  "endLine": 149,
+                  "endColumn": 30,
+                  "snippet": {
+                    "text": "                delete[] var;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "1d0aa9ca3a81218e7ab12429c5d47e754bc8d9124c380a83476ee5f6b96d0c4ab85bd06209633645851608d94856ef697d6416c2a441b6837095d005456afcd5_1"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-16ef407d-c4ba-43cf-ae60-a462dc7009ea",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Usage Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/statistical_utilities.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 148,
+                  "startColumn": 17,
+                  "endLine": 148,
+                  "endColumn": 32,
+                  "snippet": {
+                    "text": "                delete[] amean;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "a1a1a1aa305ba342717244fbaceb852e79f0f51d26cdd5768bad94b2e280fb16d94ec7211c9fff3193f5e805bd5231277eb5ce0f24b22752d7562edc69c1f637_1"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-e33f6a36-1524-404b-8572-d9700d5b829d",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Usage Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/statistical_utilities.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 170,
+                  "startColumn": 17,
+                  "endLine": 170,
+                  "endColumn": 32,
+                  "snippet": {
+                    "text": "                delete[] amean;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "a1a1a1aa305ba342717244fbaceb852e79f0f51d26cdd5768bad94b2e280fb16d94ec7211c9fff3193f5e805bd5231277eb5ce0f24b22752d7562edc69c1f637_2"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-3e993447-b1d3-4649-a7b9-f4f3c656bcda",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 577,
+                  "startColumn": 30,
+                  "endLine": 577,
+                  "endColumn": 45,
+                  "charOffset": 18074,
+                  "charLength": 15,
+                  "snippet": {
+                    "text": "malloc(bufsize)",
+                    "rendered": {
+                      "text": "malloc(bufsize)",
+                      "markdown": "`malloc(bufsize)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 18074,
+                        "charLength": 15
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-30bcd1b5-da2a-47e6-ae4f-bb69d59360df",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 557,
+                  "startColumn": 34,
+                  "endLine": 557,
+                  "endColumn": 49,
+                  "charOffset": 17444,
+                  "charLength": 15,
+                  "snippet": {
+                    "text": "malloc(bufsize)",
+                    "rendered": {
+                      "text": "malloc(bufsize)",
+                      "markdown": "`malloc(bufsize)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 17444,
+                        "charLength": 15
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-3ef85b13-b373-4bb4-99a1-b156eae93d7a",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 542,
+                  "startColumn": 22,
+                  "endLine": 542,
+                  "endColumn": 37,
+                  "charOffset": 16777,
+                  "charLength": 15,
+                  "snippet": {
+                    "text": "malloc(bufsize)",
+                    "rendered": {
+                      "text": "malloc(bufsize)",
+                      "markdown": "`malloc(bufsize)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 16777,
+                        "charLength": 15
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-eada45cb-ba6e-4677-a9e7-a418e870c958",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 470,
+                  "startColumn": 25,
+                  "endLine": 470,
+                  "endColumn": 43,
+                  "charOffset": 14311,
+                  "charLength": 18,
+                  "snippet": {
+                    "text": "malloc(length + 1)",
+                    "rendered": {
+                      "text": "malloc(length + 1)",
+                      "markdown": "`malloc(length + 1)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 14311,
+                        "charLength": 18
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-fdedd2f1-163c-4d22-b4ba-c4bb6444934c",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (strlen)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 466,
+                  "startColumn": 21,
+                  "endLine": 466,
+                  "endColumn": 32,
+                  "charOffset": 14220,
+                  "charLength": 11,
+                  "snippet": {
+                    "text": "strlen(msg)",
+                    "rendered": {
+                      "text": "strlen(msg)",
+                      "markdown": "`strlen(msg)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If a string is missing a null terminator, strlen will read past the end of the buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 14220,
+                        "charLength": 11
+                      },
+                      "insertedContent": {
+                        "text": "strlen_s(msg, <size of msg>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "description": {
+                "text": "If a string is missing a null terminator, strlen will read past the end of the buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 14220,
+                        "charLength": 11
+                      },
+                      "insertedContent": {
+                        "text": "strnlen(msg, <size of msg>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-95345953-6054-4a53-ac27-89251c8d013a",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 419,
+                  "startColumn": 26,
+                  "endLine": 419,
+                  "endColumn": 41,
+                  "charOffset": 12732,
+                  "charLength": 15,
+                  "snippet": {
+                    "text": "malloc(bufsize)",
+                    "rendered": {
+                      "text": "malloc(bufsize)",
+                      "markdown": "`malloc(bufsize)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 12732,
+                        "charLength": 15
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-16f3c9bb-0f3f-4444-999f-e9bacbd5d2c6",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/statistical_utilities.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 193,
+                  "startColumn": 17,
+                  "endLine": 193,
+                  "endColumn": 30,
+                  "snippet": {
+                    "text": "                delete[] var;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "1d0aa9ca3a81218e7ab12429c5d47e754bc8d9124c380a83476ee5f6b96d0c4ab85bd06209633645851608d94856ef697d6416c2a441b6837095d005456afcd5_4"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-b2489c0f-d317-4424-ae18-fd73d6fd52a2",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 434,
+                  "startColumn": 26,
+                  "endLine": 434,
+                  "endColumn": 41,
+                  "charOffset": 13275,
+                  "charLength": 15,
+                  "snippet": {
+                    "text": "malloc(bufsize)",
+                    "rendered": {
+                      "text": "malloc(bufsize)",
+                      "markdown": "`malloc(bufsize)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 13275,
+                        "charLength": 15
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-8ee95964-befd-4cff-b6e1-00f8424a302e",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 530,
+                  "startColumn": 30,
+                  "endLine": 530,
+                  "endColumn": 45,
+                  "charOffset": 16295,
+                  "charLength": 15,
+                  "snippet": {
+                    "text": "malloc(bufsize)",
+                    "rendered": {
+                      "text": "malloc(bufsize)",
+                      "markdown": "`malloc(bufsize)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 16295,
+                        "charLength": 15
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-dabb99fe-0d7c-470f-8d04-fc3f40820a67",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 257,
+                  "startColumn": 24,
+                  "endLine": 257,
+                  "endColumn": 51,
+                  "charOffset": 7803,
+                  "charLength": 27,
+                  "snippet": {
+                    "text": "malloc(sz * sizeof(int64_t)",
+                    "rendered": {
+                      "text": "malloc(sz * sizeof(int64_t)",
+                      "markdown": "`malloc(sz * sizeof(int64_t)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 7803,
+                        "charLength": 27
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-923fee30-d777-4178-8abd-b9cb20ce5136",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/csv/tokenizer.c"
+                },
+                "region": {
+                  "startLine": 256,
+                  "startColumn": 18,
+                  "endLine": 256,
+                  "endColumn": 44,
+                  "charOffset": 7750,
+                  "charLength": 26,
+                  "snippet": {
+                    "text": "malloc(sz * sizeof(char *)",
+                    "rendered": {
+                      "text": "malloc(sz * sizeof(char *)",
+                      "markdown": "`malloc(sz * sizeof(char *)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "source/core/csv/tokenizer.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 7750,
+                        "charLength": 26
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-d9d49ae7-8a91-4206-974a-a688f34491b4",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Usage Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/statistical_utilities.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 182,
+                  "startColumn": 17,
+                  "endLine": 182,
+                  "endColumn": 32,
+                  "snippet": {
+                    "text": "                delete[] amean;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "a1a1a1aa305ba342717244fbaceb852e79f0f51d26cdd5768bad94b2e280fb16d94ec7211c9fff3193f5e805bd5231277eb5ce0f24b22752d7562edc69c1f637_3"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-6d28f2fb-9a62-4e8c-97b2-5835e6127fb6",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/statistical_utilities.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 183,
+                  "startColumn": 17,
+                  "endLine": 183,
+                  "endColumn": 30,
+                  "snippet": {
+                    "text": "                delete[] var;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "1d0aa9ca3a81218e7ab12429c5d47e754bc8d9124c380a83476ee5f6b96d0c4ab85bd06209633645851608d94856ef697d6416c2a441b6837095d005456afcd5_3"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-f680924e-e0ed-498a-a560-9d8328ce9158",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Usage Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/statistical_utilities.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 192,
+                  "startColumn": 17,
+                  "endLine": 192,
+                  "endColumn": 32,
+                  "snippet": {
+                    "text": "                delete[] amean;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "a1a1a1aa305ba342717244fbaceb852e79f0f51d26cdd5768bad94b2e280fb16d94ec7211c9fff3193f5e805bd5231277eb5ce0f24b22752d7562edc69c1f637_4"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-9ada1bee-b21f-4b67-897d-c6b895145608",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Usage Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/statistical_utilities.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 264,
+                  "startColumn": 9,
+                  "endLine": 264,
+                  "endColumn": 22,
+                  "snippet": {
+                    "text": "        delete[] var;                    // LCOV_EXCL_LINE"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "1d0aa9ca3a81218e7ab12429c5d47e754bc8d9124c380a83476ee5f6b96d0c4ab85bd06209633645851608d94856ef697d6416c2a441b6837095d005456afcd5_6"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-75856fb2-b9b7-42c8-a5ec-2aa7b917e19d",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Usage Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/statistical_utilities.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 268,
+                  "startColumn": 5,
+                  "endLine": 268,
+                  "endColumn": 20,
+                  "snippet": {
+                    "text": "    delete[] amean;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "a1a1a1aa305ba342717244fbaceb852e79f0f51d26cdd5768bad94b2e280fb16d94ec7211c9fff3193f5e805bd5231277eb5ce0f24b22752d7562edc69c1f637_7"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-85e6a839-31a6-440c-af81-c8b0cdd45e5f",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/basic_statistics/statistical_utilities.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 269,
+                  "startColumn": 5,
+                  "endLine": 269,
+                  "endColumn": 18,
+                  "snippet": {
+                    "text": "    delete[] var;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "1d0aa9ca3a81218e7ab12429c5d47e754bc8d9124c380a83476ee5f6b96d0c4ab85bd06209633645851608d94856ef697d6416c2a441b6837095d005456afcd5_7"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "glog-69060c76-5db7-460e-9df6-b801f62cfb07",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Incompatible Memory Release Function Usage Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "source/core/clustering/kmeans.cpp",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 152,
+                  "startColumn": 9,
+                  "endLine": 153,
+                  "endColumn": 26,
+                  "snippet": {
+                    "text": "        delete[] (A_temp);\n        A_temp = nullptr;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "6b3d75877f39648b15cd34cf373c8baf1cd2d4f7ed8c331200ada42b4342f87b452bdf03beea607bf5e4f986d2d5997988a20e247c17ed34865be445762170b9_0"
+          },
+          "properties": {}
+        }
+      ],
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ]
+    }
+  ]
+}
